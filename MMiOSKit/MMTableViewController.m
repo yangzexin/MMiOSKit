@@ -134,8 +134,9 @@ NSInteger const MMFirstPageIndex = 1;
             [self restoreLoadingHeader];
             [self loadNextPageDidTrigger];
         } position:SVPullToRefreshPositionBottom];
-        [self.tableView.pullToRefreshView setTitle:@"继续上拉加载.." forState:SVPullToRefreshStateAll];
-        [self.tableView.pullToRefreshView setTitle:@"释放立即加载.." forState:SVPullToRefreshStateTriggered];
+        [self.tableView.pullToRefreshView setTitle:@"上拉加载.." forState:SVPullToRefreshStateAll];
+        [self.tableView.pullToRefreshView setTitle:@"加载中.." forState:SVPullToRefreshStateLoading];
+        [self.tableView.pullToRefreshView setTitle:@"立即加载.." forState:SVPullToRefreshStateTriggered];
     }
     self.loadingNext = NO;
     if (!self.pageDisabled) {
