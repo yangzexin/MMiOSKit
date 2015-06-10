@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E5F5D4A1B282E5300088A54 /* MMiOSKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E5F5D491B282E5300088A54 /* MMiOSKit.h */; };
+		3E5F5D4C1B282E5300088A54 /* MMiOSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */; };
+		3E5F5D521B282E5300088A54 /* libMMiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F5D461B282E5300088A54 /* libMMiOSKit.a */; };
+		3E5F5D791B282EA400088A54 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D6B1B282EA400088A54 /* MMViewController.m */; };
+		3E5F5D7A1B282EA400088A54 /* MMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D6D1B282EA400088A54 /* MMTableViewController.m */; };
+		3E5F5D7B1B282EA400088A54 /* MMCustomableTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D701B282EA400088A54 /* MMCustomableTabBarController.m */; };
+		3E5F5D7C1B282EA400088A54 /* MMConfigableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D721B282EA400088A54 /* MMConfigableTableViewController.m */; };
+		3E5F5D7D1B282EA400088A54 /* MMBaseTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D741B282EA400088A54 /* MMBaseTabController.m */; };
+		3E5F5D7E1B282EA400088A54 /* MMNaviBarTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D761B282EA400088A54 /* MMNaviBarTabController.m */; };
+		3E5F5D7F1B282EA400088A54 /* MMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D781B282EA400088A54 /* MMWebViewController.m */; };
+		3E5F5D871B282ED000088A54 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D841B282ED000088A54 /* NJKWebViewProgress.m */; };
+		3E5F5D881B282ED000088A54 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D861B282ED000088A54 /* NJKWebViewProgressView.m */; };
+		3E5F5D8E1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D8B1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m */; };
+		3E5F5D8F1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D8D1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E5F5D531B282E5300088A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E5F5D3E1B282E5300088A54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E5F5D451B282E5300088A54;
+			remoteInfo = MMiOSKit;
+		};
+		3E5F5D661B282E7F00088A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E5F5D621B282E7F00088A54 /* SFiOSKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3ED59DB91828D33A002531DD;
+			remoteInfo = SFiOSKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3E5F5D441B282E5300088A54 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				3E5F5D4A1B282E5300088A54 /* MMiOSKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3E5F5D461B282E5300088A54 /* libMMiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E5F5D491B282E5300088A54 /* MMiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMiOSKit.h; sourceTree = "<group>"; };
+		3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMiOSKit.m; sourceTree = "<group>"; };
+		3E5F5D511B282E5300088A54 /* MMiOSKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMiOSKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E5F5D571B282E5300088A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E5F5D621B282E7F00088A54 /* SFiOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFiOSKit.xcodeproj; path = ../SFLibraries/SFiOSKit/SFiOSKit.xcodeproj; sourceTree = "<group>"; };
+		3E5F5D6A1B282EA400088A54 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
+		3E5F5D6B1B282EA400088A54 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
+		3E5F5D6C1B282EA400088A54 /* MMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewController.h; sourceTree = "<group>"; };
+		3E5F5D6D1B282EA400088A54 /* MMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewController.m; sourceTree = "<group>"; };
+		3E5F5D6E1B282EA400088A54 /* MMViewController-private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMViewController-private.h"; sourceTree = "<group>"; };
+		3E5F5D6F1B282EA400088A54 /* MMCustomableTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCustomableTabBarController.h; sourceTree = "<group>"; };
+		3E5F5D701B282EA400088A54 /* MMCustomableTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCustomableTabBarController.m; sourceTree = "<group>"; };
+		3E5F5D711B282EA400088A54 /* MMConfigableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMConfigableTableViewController.h; sourceTree = "<group>"; };
+		3E5F5D721B282EA400088A54 /* MMConfigableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMConfigableTableViewController.m; sourceTree = "<group>"; };
+		3E5F5D731B282EA400088A54 /* MMBaseTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseTabController.h; sourceTree = "<group>"; };
+		3E5F5D741B282EA400088A54 /* MMBaseTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseTabController.m; sourceTree = "<group>"; };
+		3E5F5D751B282EA400088A54 /* MMNaviBarTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNaviBarTabController.h; sourceTree = "<group>"; };
+		3E5F5D761B282EA400088A54 /* MMNaviBarTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNaviBarTabController.m; sourceTree = "<group>"; };
+		3E5F5D771B282EA400088A54 /* MMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWebViewController.h; sourceTree = "<group>"; };
+		3E5F5D781B282EA400088A54 /* MMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWebViewController.m; sourceTree = "<group>"; };
+		3E5F5D831B282ED000088A54 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		3E5F5D841B282ED000088A54 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		3E5F5D851B282ED000088A54 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		3E5F5D861B282ED000088A54 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		3E5F5D891B282ED800088A54 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		3E5F5D8A1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		3E5F5D8B1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		3E5F5D8C1B282ED800088A54 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		3E5F5D8D1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E5F5D431B282E5300088A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E5F5D4E1B282E5300088A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E5F5D521B282E5300088A54 /* libMMiOSKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E5F5D3D1B282E5300088A54 = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D681B282E8700088A54 /* Dependencies */,
+				3E5F5D481B282E5300088A54 /* MMiOSKit */,
+				3E5F5D551B282E5300088A54 /* MMiOSKitTests */,
+				3E5F5D471B282E5300088A54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E5F5D471B282E5300088A54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D461B282E5300088A54 /* libMMiOSKit.a */,
+				3E5F5D511B282E5300088A54 /* MMiOSKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E5F5D481B282E5300088A54 /* MMiOSKit */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D691B282E9B00088A54 /* ViewControllers */,
+				3E5F5D491B282E5300088A54 /* MMiOSKit.h */,
+				3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */,
+			);
+			path = MMiOSKit;
+			sourceTree = "<group>";
+		};
+		3E5F5D551B282E5300088A54 /* MMiOSKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D561B282E5300088A54 /* Supporting Files */,
+			);
+			path = MMiOSKitTests;
+			sourceTree = "<group>";
+		};
+		3E5F5D561B282E5300088A54 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D571B282E5300088A54 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E5F5D631B282E7F00088A54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D671B282E7F00088A54 /* libSFiOSKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E5F5D681B282E8700088A54 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D621B282E7F00088A54 /* SFiOSKit.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		3E5F5D691B282E9B00088A54 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D801B282EBC00088A54 /* View */,
+				3E5F5D6A1B282EA400088A54 /* MMViewController.h */,
+				3E5F5D6B1B282EA400088A54 /* MMViewController.m */,
+				3E5F5D6C1B282EA400088A54 /* MMTableViewController.h */,
+				3E5F5D6D1B282EA400088A54 /* MMTableViewController.m */,
+				3E5F5D6E1B282EA400088A54 /* MMViewController-private.h */,
+				3E5F5D6F1B282EA400088A54 /* MMCustomableTabBarController.h */,
+				3E5F5D701B282EA400088A54 /* MMCustomableTabBarController.m */,
+				3E5F5D711B282EA400088A54 /* MMConfigableTableViewController.h */,
+				3E5F5D721B282EA400088A54 /* MMConfigableTableViewController.m */,
+				3E5F5D731B282EA400088A54 /* MMBaseTabController.h */,
+				3E5F5D741B282EA400088A54 /* MMBaseTabController.m */,
+				3E5F5D751B282EA400088A54 /* MMNaviBarTabController.h */,
+				3E5F5D761B282EA400088A54 /* MMNaviBarTabController.m */,
+				3E5F5D771B282EA400088A54 /* MMWebViewController.h */,
+				3E5F5D781B282EA400088A54 /* MMWebViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3E5F5D801B282EBC00088A54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D821B282EC600088A54 /* NJKWebViewProgress */,
+				3E5F5D811B282EC000088A54 /* SVPullToRefresh */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3E5F5D811B282EC000088A54 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D891B282ED800088A54 /* SVPullToRefresh.h */,
+				3E5F5D8A1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.h */,
+				3E5F5D8B1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m */,
+				3E5F5D8C1B282ED800088A54 /* UIScrollView+SVPullToRefresh.h */,
+				3E5F5D8D1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			name = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		3E5F5D821B282EC600088A54 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				3E5F5D831B282ED000088A54 /* NJKWebViewProgress.h */,
+				3E5F5D841B282ED000088A54 /* NJKWebViewProgress.m */,
+				3E5F5D851B282ED000088A54 /* NJKWebViewProgressView.h */,
+				3E5F5D861B282ED000088A54 /* NJKWebViewProgressView.m */,
+			);
+			name = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E5F5D451B282E5300088A54 /* MMiOSKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E5F5D5A1B282E5300088A54 /* Build configuration list for PBXNativeTarget "MMiOSKit" */;
+			buildPhases = (
+				3E5F5D421B282E5300088A54 /* Sources */,
+				3E5F5D431B282E5300088A54 /* Frameworks */,
+				3E5F5D441B282E5300088A54 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMiOSKit;
+			productName = MMiOSKit;
+			productReference = 3E5F5D461B282E5300088A54 /* libMMiOSKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3E5F5D501B282E5300088A54 /* MMiOSKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E5F5D5D1B282E5300088A54 /* Build configuration list for PBXNativeTarget "MMiOSKitTests" */;
+			buildPhases = (
+				3E5F5D4D1B282E5300088A54 /* Sources */,
+				3E5F5D4E1B282E5300088A54 /* Frameworks */,
+				3E5F5D4F1B282E5300088A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E5F5D541B282E5300088A54 /* PBXTargetDependency */,
+			);
+			name = MMiOSKitTests;
+			productName = MMiOSKitTests;
+			productReference = 3E5F5D511B282E5300088A54 /* MMiOSKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E5F5D3E1B282E5300088A54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = yangzexin;
+				TargetAttributes = {
+					3E5F5D451B282E5300088A54 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					3E5F5D501B282E5300088A54 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = 3E5F5D411B282E5300088A54 /* Build configuration list for PBXProject "MMiOSKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3E5F5D3D1B282E5300088A54;
+			productRefGroup = 3E5F5D471B282E5300088A54 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3E5F5D631B282E7F00088A54 /* Products */;
+					ProjectRef = 3E5F5D621B282E7F00088A54 /* SFiOSKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3E5F5D451B282E5300088A54 /* MMiOSKit */,
+				3E5F5D501B282E5300088A54 /* MMiOSKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3E5F5D671B282E7F00088A54 /* libSFiOSKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSFiOSKit.a;
+			remoteRef = 3E5F5D661B282E7F00088A54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E5F5D4F1B282E5300088A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E5F5D421B282E5300088A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E5F5D7A1B282EA400088A54 /* MMTableViewController.m in Sources */,
+				3E5F5D881B282ED000088A54 /* NJKWebViewProgressView.m in Sources */,
+				3E5F5D7E1B282EA400088A54 /* MMNaviBarTabController.m in Sources */,
+				3E5F5D8E1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				3E5F5D791B282EA400088A54 /* MMViewController.m in Sources */,
+				3E5F5D7D1B282EA400088A54 /* MMBaseTabController.m in Sources */,
+				3E5F5D7B1B282EA400088A54 /* MMCustomableTabBarController.m in Sources */,
+				3E5F5D7C1B282EA400088A54 /* MMConfigableTableViewController.m in Sources */,
+				3E5F5D8F1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m in Sources */,
+				3E5F5D4C1B282E5300088A54 /* MMiOSKit.m in Sources */,
+				3E5F5D871B282ED000088A54 /* NJKWebViewProgress.m in Sources */,
+				3E5F5D7F1B282EA400088A54 /* MMWebViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E5F5D4D1B282E5300088A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E5F5D541B282E5300088A54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E5F5D451B282E5300088A54 /* MMiOSKit */;
+			targetProxy = 3E5F5D531B282E5300088A54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3E5F5D581B282E5300088A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3E5F5D591B282E5300088A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3E5F5D5B1B282E5300088A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "MMiOSKit/MMiOSKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../SFLibraries/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3E5F5D5C1B282E5300088A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "MMiOSKit/MMiOSKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../SFLibraries/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3E5F5D5E1B282E5300088A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MMiOSKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E5F5D5F1B282E5300088A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MMiOSKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E5F5D411B282E5300088A54 /* Build configuration list for PBXProject "MMiOSKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E5F5D581B282E5300088A54 /* Debug */,
+				3E5F5D591B282E5300088A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E5F5D5A1B282E5300088A54 /* Build configuration list for PBXNativeTarget "MMiOSKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E5F5D5B1B282E5300088A54 /* Debug */,
+				3E5F5D5C1B282E5300088A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E5F5D5D1B282E5300088A54 /* Build configuration list for PBXNativeTarget "MMiOSKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E5F5D5E1B282E5300088A54 /* Debug */,
+				3E5F5D5F1B282E5300088A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E5F5D3E1B282E5300088A54 /* Project object */;
+}
