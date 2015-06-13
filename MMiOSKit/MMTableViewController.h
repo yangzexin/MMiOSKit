@@ -23,7 +23,7 @@ OBJC_EXPORT NSInteger const MMFirstPageIndex;
 @property (nonatomic, assign, readonly) BOOL refreshing;
 @property (nonatomic, assign, readonly) BOOL loadingNext;
 
-@property (nonatomic, copy) void(^refreshingPageDidTriggerListener)();
+@property (nonatomic, copy) void(^whenRefreshingPageDidTrigger)();
 
 - (void)resetPageCursor;
 

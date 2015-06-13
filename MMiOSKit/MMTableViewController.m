@@ -99,8 +99,8 @@ NSInteger const MMFirstPageIndex = 1;
     self.pageIndex = MMFirstPageIndex;
     self.refreshing = YES;
     [self restoreLoadingFooter];
-    if (self.refreshingPageDidTriggerListener) {
-        self.refreshingPageDidTriggerListener();
+    if (self.whenRefreshingPageDidTrigger) {
+        self.whenRefreshingPageDidTrigger();
     }
     [self refreshPageDidTrigger];
 }
