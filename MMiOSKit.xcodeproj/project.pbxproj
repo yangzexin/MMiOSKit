@@ -21,6 +21,7 @@
 		3E5F5D881B282ED000088A54 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D861B282ED000088A54 /* NJKWebViewProgressView.m */; };
 		3E5F5D8E1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D8B1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m */; };
 		3E5F5D8F1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D8D1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m */; };
+		3EA029B01B2D279000324D11 /* MMTopMostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA029AF1B2D279000324D11 /* MMTopMostView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		3E5F5D8B1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		3E5F5D8C1B282ED800088A54 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		3E5F5D8D1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		3EA029AE1B2D279000324D11 /* MMTopMostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTopMostView.h; sourceTree = "<group>"; };
+		3EA029AF1B2D279000324D11 /* MMTopMostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTopMostView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,7 @@
 		3E5F5D481B282E5300088A54 /* MMiOSKit */ = {
 			isa = PBXGroup;
 			children = (
+				3EA029AC1B2D278400324D11 /* View */,
 				3E5F5D691B282E9B00088A54 /* ViewControllers */,
 				3E5F5D491B282E5300088A54 /* MMiOSKit.h */,
 				3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */,
@@ -219,6 +223,15 @@
 				3E5F5D861B282ED000088A54 /* NJKWebViewProgressView.m */,
 			);
 			name = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		3EA029AC1B2D278400324D11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EA029AE1B2D279000324D11 /* MMTopMostView.h */,
+				3EA029AF1B2D279000324D11 /* MMTopMostView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +342,7 @@
 				3E5F5D881B282ED000088A54 /* NJKWebViewProgressView.m in Sources */,
 				3E5F5D7E1B282EA400088A54 /* MMNaviBarTabController.m in Sources */,
 				3E5F5D8E1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				3EA029B01B2D279000324D11 /* MMTopMostView.m in Sources */,
 				3E5F5D791B282EA400088A54 /* MMViewController.m in Sources */,
 				3E5F5D7D1B282EA400088A54 /* MMBaseTabController.m in Sources */,
 				3E5F5D7B1B282EA400088A54 /* MMCustomableTabBarController.m in Sources */,
