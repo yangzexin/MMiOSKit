@@ -301,10 +301,10 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     __weak typeof(self) wself = self;
     [self sendServantWithBuilder:servantBuilder started:^{
         __strong typeof(wself) self = wself;
-        self.view.userInteractionEnabled = NO;
+        [self sf_setWaiting:YES];
     } succeeded:succeeded completed:^{
         __strong typeof(wself) self = wself;
-        self.view.userInteractionEnabled = YES;
+        [self sf_setWaiting:NO];
     }];
 }
 
