@@ -56,11 +56,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 
 - (void)initialize
 {
-    __weak typeof(self) weakSelf = self;
-    self.waitingForViewControllerVisible = [SFWaiting waitWithCondition:^BOOL{
-        __weak typeof(weakSelf) self = weakSelf;
-        return self.visible;
-    }];
+    self.waitingForViewControllerVisible = [SFMarkWaiting markWaiting];
 }
 
 - (void)loadView
@@ -90,7 +86,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.visible = YES;
+    [self.waitingForViewControllerVisible markAsFinish];
     [self.navigationController setNavigationBarHidden:self.hidesNavigationBar animated:animated];
     if (self.viewWillAppearObserver) {
         self.viewWillAppearObserver();
@@ -105,7 +101,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.visible = NO;
+    [self.waitingForViewControllerVisible resetMark];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

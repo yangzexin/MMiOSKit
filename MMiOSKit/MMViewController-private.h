@@ -10,9 +10,7 @@
 
 @interface MMViewController ()
 
-@property (nonatomic, assign) BOOL visible;
-
-@property (nonatomic, strong) SFWaiting *waitingForViewControllerVisible;
+@property (nonatomic, strong) SFMarkWaiting *waitingForViewControllerVisible;
 
 @property (nonatomic, copy) void(^didTapBackButton)();
 

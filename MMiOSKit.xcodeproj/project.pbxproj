@@ -175,10 +175,10 @@
 			children = (
 				3E5F5D801B282EBC00088A54 /* View */,
 				3E5F5D6A1B282EA400088A54 /* MMViewController.h */,
+				3E5F5D6E1B282EA400088A54 /* MMViewController-private.h */,
 				3E5F5D6B1B282EA400088A54 /* MMViewController.m */,
 				3E5F5D6C1B282EA400088A54 /* MMTableViewController.h */,
 				3E5F5D6D1B282EA400088A54 /* MMTableViewController.m */,
-				3E5F5D6E1B282EA400088A54 /* MMViewController-private.h */,
 				3E5F5D6F1B282EA400088A54 /* MMCustomableTabBarController.h */,
 				3E5F5D701B282EA400088A54 /* MMCustomableTabBarController.m */,
 				3E5F5D711B282EA400088A54 /* MMConfigableTableViewController.h */,

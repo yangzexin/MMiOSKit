@@ -13,8 +13,6 @@
 
 @interface MMViewController : UIViewController
 
-@property (nonatomic, assign, readonly) BOOL visible;
-
 @property (nonatomic, assign) BOOL hidesNavigationBar;
 
 @property (nonatomic, copy) void(^viewWillAppearObserver)();
