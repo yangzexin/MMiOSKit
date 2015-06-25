@@ -86,6 +86,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self.waitingForViewControllerVisible markAsFinish];
     [self.navigationController setNavigationBarHidden:self.hidesNavigationBar animated:animated];
     if (self.viewWillAppearObserver) {
