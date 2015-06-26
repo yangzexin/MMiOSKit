@@ -152,6 +152,11 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     [self.view endEditing:YES];
 }
 
+- (BOOL)visible
+{
+    return [self.waitingForViewControllerVisible isMarked];
+}
+
 #pragma mark - Normal Bar button
 + (SFBlockedBarButtonItem *)normalRightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handler
 {
