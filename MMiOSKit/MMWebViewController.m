@@ -39,7 +39,7 @@
     __weak typeof(self) weakself = self;
     [SFTrackProperty(self, progressColor) change:^(id value) {
         __strong typeof(weakself) self = weakself;
-        self.progressView.backgroundColor = self.progressColor == nil ? [UIColor redColor] : self.progressColor;
+        self.progressView.backgroundColor = self.progressColor == nil ? [UIColor lightGrayColor] : self.progressColor;
     }];
 }
 
@@ -97,9 +97,8 @@
     [self.view addSubview:webView];
     self.webView = webView;
     
-    SFWebViewProgressBar *progressBar = [[SFWebViewProgressBar alloc] initWithFrame:CGRectMake(0, self.progressBarY, self.view.frame.size.width, 2)];
+    SFWebViewProgressBar *progressBar = [[SFWebViewProgressBar alloc] initWithFrame:CGRectMake(0, self.progressBarPosition, self.view.frame.size.width, 2)];
     progressBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    progressBar.progressColor = SFRGBA(255, 0, 0, 50);
     [progressBar setPercent:.0f animated:NO completion:nil];
     [self.view addSubview:progressBar];
     self.progressBar = progressBar;

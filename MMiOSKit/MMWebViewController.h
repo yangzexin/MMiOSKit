@@ -14,11 +14,11 @@
 
 + (instancetype)controllerWithURL:(NSURL *)url;
 
-@property (nonatomic, assign) CGFloat progressBarY;
+@property (nonatomic, weak, readonly) UIWebView *webView;
+
+@property (nonatomic, assign) CGFloat progressBarPosition;
 
 @property (nonatomic, assign) BOOL dragRefreshEnabled;
-
-@property (nonatomic, weak, readonly) UIWebView *webView;
 
 - (void)gotoURL:(NSURL *)url;
 
