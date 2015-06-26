@@ -214,6 +214,9 @@
 {
     [webView stringByEvaluatingJavaScriptFromString:@"document.body.style.webkitTouchCallout='none';"];
     [self sf_setWaiting:NO];
+    if (self.didFinishLoad) {
+        self.didFinishLoad();
+    }
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

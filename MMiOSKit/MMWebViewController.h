@@ -20,6 +20,8 @@
 
 @property (nonatomic, assign) BOOL dragRefreshEnabled;
 
+@property (nonatomic, copy) void(^didFinishLoad)();
+
 - (void)gotoURL:(NSURL *)url;
 
 @end
