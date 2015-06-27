@@ -39,7 +39,7 @@
     __weak typeof(self) weakself = self;
     [SFTrackProperty(self, progressColor) change:^(id value) {
         __strong typeof(weakself) self = weakself;
-        self.progressView.backgroundColor = self.progressColor == nil ? [UIColor lightGrayColor] : self.progressColor;
+        self.progressView.backgroundColor = self.progressColor == nil ? SFRGB(227, 227, 227) : self.progressColor;
     }];
 }
 
