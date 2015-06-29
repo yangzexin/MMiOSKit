@@ -20,4 +20,6 @@
 
 - (void)updatePageTitles;
 
+- (void)didTapNavigationBar;
+
 @end

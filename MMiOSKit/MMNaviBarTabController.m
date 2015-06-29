@@ -148,11 +148,16 @@
     [self _updateTitleLabelWithContentOffset:self.compatibleTabController.scrollView.contentOffset];
 }
 
+- (void)didTapNavigationBar
+{
+}
+
 - (void)_titleViewTapGestureRecognizer:(UITapGestureRecognizer *)tapGestureRecognizer
 {
     if ([self shouldSwitchingTabOnTappingNavigationBar]) {
         [self selectNextViewControllerAnimated:YES completion:nil];
     }
+    [self didTapNavigationBar];
 }
 
 - (BOOL)shouldSwitchingTabOnTappingNavigationBar
