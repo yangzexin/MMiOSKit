@@ -51,9 +51,15 @@
     CGFloat height = 0;
     NSString *row = [[_keySectionValueRows objectForKey:[_sections objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     
-    UIView *view = [_keyRowValueView objectForKey:row];
-    if (view) {
-        height = view.frame.size.height;
+    NSValue *heightCalculator = [self.keyRowValueHeightCalculator objectForKey:row];
+    if (heightCalculator) {
+        CGFloat(^calculator)() = (CGFloat(^)())[heightCalculator sf_block];
+        height = calculator();
+    } else {
+        UIView *view = [_keyRowValueView objectForKey:row];
+        if (view) {
+            height = view.frame.size.height;
+        }
     }
     
     return height;

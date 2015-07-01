@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *sections;
 @property (nonatomic, strong) NSDictionary *keySectionValueRows;
 @property (nonatomic, strong) NSDictionary *keyRowValueView;
+@property (nonatomic, strong) NSDictionary *keyRowValueHeightCalculator;
 @property (nonatomic, strong) NSArray *headerRows;
 
 @property (nonatomic, assign) BOOL transparentBackground;
