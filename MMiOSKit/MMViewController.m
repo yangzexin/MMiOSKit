@@ -269,7 +269,9 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 
 - (void)processingError:(NSError *)error retry:(void(^)())retry general:(void(^)(NSError *error))general
 {
-    if (error.code == NSURLErrorTimedOut) {
+    if (error.code == NSURLErrorTimedOut
+        || error.code == SFWrappableServantTimeoutErrorCode
+        || [error.localizedDescription hasSuffix:@"timeout."]) {
         void(^alertBlock)() = ^{
             [UIAlertView sf_alertWithTitle:NSLocalizedString(@"Prompt", nil) message:NSLocalizedString(@"Connect to server timeout.", nil) completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
                 if (buttonIndex != 0) {
