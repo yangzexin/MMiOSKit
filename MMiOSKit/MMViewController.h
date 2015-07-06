@@ -50,6 +50,10 @@
                      succeeded:(SFServantSucceeded)succeeded;
 
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
+                     succeeded:(SFServantSucceeded)succeeded
+                    identifier:(NSString *)identifier;
+
+- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
                        started:(void(^)())started
                      succeeded:(SFServantSucceeded)succeeded
                      completed:(SFServantCompleted)completed;

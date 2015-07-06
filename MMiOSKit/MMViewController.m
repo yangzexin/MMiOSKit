@@ -302,6 +302,13 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
                      succeeded:(SFServantSucceeded)succeeded
 {
+    [self sendServantWithBuilder:servantBuilder succeeded:succeeded identifier:nil];
+}
+
+- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
+                     succeeded:(SFServantSucceeded)succeeded
+                    identifier:(NSString *)identifier
+{
     __weak typeof(self) wself = self;
     [self sendServantWithBuilder:servantBuilder started:^{
         __strong typeof(wself) self = wself;
@@ -309,7 +316,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     } succeeded:succeeded completed:^{
         __strong typeof(wself) self = wself;
         [self sf_setWaiting:NO];
-    }];
+    } identifier:identifier];
 }
 
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
