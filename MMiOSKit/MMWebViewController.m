@@ -28,8 +28,7 @@
 
 @implementation SFWebViewProgressBar
 
-- (void)initialize
-{
+- (void)initialize {
     [super initialize];
     UIView *progressView = [[UIView alloc] initWithFrame:self.bounds];
     progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -43,8 +42,7 @@
     }];
 }
 
-- (void)setPercent:(float)percent animated:(BOOL)animated completion:(void(^)())completion
-{
+- (void)setPercent:(float)percent animated:(BOOL)animated completion:(void(^)())completion {
     void(^animations)() = ^{
         CGRect tmpFrame = self.progressView.frame;
         tmpFrame.size.width = ceil(percent * self.frame.size.width);
@@ -80,16 +78,14 @@
 
 @implementation MMWebViewController
 
-+ (instancetype)controllerWithURL:(NSURL *)url
-{
++ (instancetype)controllerWithURL:(NSURL *)url {
     MMWebViewController *controller = [self controller];
     controller.url = url;
     
     return controller;
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
     
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
@@ -132,14 +128,12 @@
     [self.webView.scrollView.pullToRefreshView setTitle:@"释放立即刷新页面" forState:SVPullToRefreshStateTriggered];
 }
 
-- (void)setDragRefreshEnabled:(BOOL)dragRefreshEnabled
-{
+- (void)setDragRefreshEnabled:(BOOL)dragRefreshEnabled {
     _dragRefreshEnabled = dragRefreshEnabled;
     self.webView.scrollView.showsPullToRefresh = dragRefreshEnabled;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     UIButton *closeButton = [self sf_associatedObjectWithKey:@"closeButton"];
     closeButton.alpha = .0f;
@@ -148,8 +142,7 @@
     }];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     UIButton *closeButton = [self sf_associatedObjectWithKey:@"closeButton"];
     [UIView animateWithDuration:.25f animations:^{
@@ -157,8 +150,7 @@
     }];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.webViewProgress = [[NJKWebViewProgress alloc] init];
@@ -169,16 +161,14 @@
     [self gotoURL:self.url];
 }
 
-- (void)gotoURL:(NSURL *)url
-{
+- (void)gotoURL:(NSURL *)url {
     if (url) {
         [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     }
 }
 
 #pragma mark - UIWebViewDelegate
-- (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
-{
+- (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress {
     if (progress == .0f) {
         self.progressBar.hidden = NO;
         [self.progressBar setPercent:.0f animated:NO completion:nil];
@@ -193,8 +183,7 @@
     }
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     __weak typeof(webView) weakwebView = webView;
     if ([[SFWebViewCallTracker sharedInstance] isURLTrackable:request.URL javascriptExecutor:^NSString *(NSString *javascript){
         __strong typeof(weakwebView) webView = weakwebView;
@@ -206,13 +195,11 @@
     return YES;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
+- (void)webViewDidStartLoad:(UIWebView *)webView {
     [self sf_setWaiting:YES];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [webView stringByEvaluatingJavaScriptFromString:@"document.body.style.webkitTouchCallout='none';"];
     [self sf_setWaiting:NO];
     if (self.didFinishLoad) {
@@ -220,8 +207,7 @@
     }
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [self sf_setWaiting:NO];
 }
 

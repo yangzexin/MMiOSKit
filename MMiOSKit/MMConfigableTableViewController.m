@@ -10,19 +10,16 @@
 
 @implementation MMConfigableTableViewController
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
-- (UIView *)normalSectionHeaderWithTitle:(NSString *)title
-{
+- (UIView *)normalSectionHeaderWithTitle:(NSString *)title {
     return [self normalSectionHeaderWithTitle:title height:30.0f];
 }
 
-- (UIView *)normalSectionHeaderWithTitle:(NSString *)title height:(CGFloat)height
-{
+- (UIView *)normalSectionHeaderWithTitle:(NSString *)title height:(CGFloat)height {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, height)];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.frame.size.width - height, view.frame.size.height)];
@@ -36,18 +33,15 @@
 }
 
 #pragma mark - UITableViewDelegate & dataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [_sections count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[_keySectionValueRows objectForKey:[_sections objectAtIndex:section]] count];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0;
     NSString *row = [[_keySectionValueRows objectForKey:[_sections objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     
@@ -65,8 +59,7 @@
     return height;
 }
 
-- (UITableViewCell *)_headerCellWithRow:(NSString *)row
-{
+- (UITableViewCell *)_headerCellWithRow:(NSString *)row {
     static NSString *identifier = @"header";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
     
@@ -86,8 +79,7 @@
     return cell;
 }
 
-- (UITableViewCell *)_cellForRow:(NSString *)row indexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)_cellForRow:(NSString *)row indexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"iden";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
     
@@ -106,8 +98,7 @@
     return cell;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
     
     NSString *row = [[_keySectionValueRows objectForKey:[_sections objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];

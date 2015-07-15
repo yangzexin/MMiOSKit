@@ -12,8 +12,7 @@
 
 @implementation MMViewController
 
-+ (instancetype)controller
-{
++ (instancetype)controller {
     id controller = [self new];
     
     return controller;
@@ -21,25 +20,21 @@
 
 static UIImage *MMLeftBarButtonItemImage = nil;
 
-+ (UIImage *)defaultLeftBarButtonItemImage
-{
++ (UIImage *)defaultLeftBarButtonItemImage {
     return MMLeftBarButtonItemImage == nil ? [@"✕" sf_imageWithFont:[UIFont systemFontOfSize:30.0f] textColor:[UIColor whiteColor]] : MMLeftBarButtonItemImage;
 }
 
-+ (void)setDefaultBarButtonItemImage:(UIImage *)image
-{
++ (void)setDefaultBarButtonItemImage:(UIImage *)image {
     MMLeftBarButtonItemImage = image;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 #ifdef DEBUG
     NSLog(@"%@ %@ dealloc", self.title, NSStringFromClass([self class]));
 #endif
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self initialize];
@@ -47,20 +42,17 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     return self;
 }
 
-- (id)init
-{
+- (id)init {
     self = [self initWithNibName:nil bundle:nil];
     
     return self;
 }
 
-- (void)initialize
-{
+- (void)initialize {
     self.waitingForViewControllerVisible = [SFMarkWaiting markWaiting];
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
     
     self.view.backgroundColor = SFRGB(245, 245, 245);
@@ -73,18 +65,15 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     }
 }
 
-- (void)waitUntilVisible:(void(^)())block
-{
+- (void)waitUntilVisible:(void(^)())block {
     [_waitingForViewControllerVisible wait:block];
 }
 
-- (void)waitUntilVisible:(void(^)())block identifier:(NSString *)identifier
-{
+- (void)waitUntilVisible:(void(^)())block identifier:(NSString *)identifier {
     [_waitingForViewControllerVisible wait:block uniqueIdentifier:identifier];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [self.waitingForViewControllerVisible markAsFinish];
@@ -94,39 +83,32 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.waitingForViewControllerVisible resetMark];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 }
 
-- (void)setLeftBarButtonItemAsBackButtonWithHandler:(void(^)())handler
-{
+- (void)setLeftBarButtonItemAsBackButtonWithHandler:(void(^)())handler {
     self.didTapBackButton = handler;
 }
 
-- (SFBlockedBarButtonItem *)rightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handler
-{
+- (SFBlockedBarButtonItem *)rightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handler {
     return [MMViewController normalRightBarButtonItemWithImage:image handler:handler];
 }
 
-- (SFBlockedBarButtonItem *)rightBarButtonItemWithTitle:(NSString *)title handler:(void(^)())handler
-{
+- (SFBlockedBarButtonItem *)rightBarButtonItemWithTitle:(NSString *)title handler:(void(^)())handler {
     return [MMViewController normalRightBarButtonItemWithTitle:title handler:handler];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
     if ([self isViewLoaded] && self.view.window == nil) {
@@ -136,8 +118,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     [self.waitingForViewControllerVisible cancelAll];
 }
 
-- (void)setHidesNavigationBar:(BOOL)hidesNavigationBar
-{
+- (void)setHidesNavigationBar:(BOOL)hidesNavigationBar {
     _hidesNavigationBar = hidesNavigationBar;
     for (UIViewController *viewController in self.childViewControllers) {
         if ([viewController respondsToSelector:@selector(setHidesNavigationBar:)]) {
@@ -146,20 +127,17 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     }
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
     [self.view endEditing:YES];
 }
 
-- (BOOL)visible
-{
+- (BOOL)visible {
     return [self.waitingForViewControllerVisible isMarked];
 }
 
 #pragma mark - Normal Bar button
-+ (SFBlockedBarButtonItem *)normalRightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handler
-{
++ (SFBlockedBarButtonItem *)normalRightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handle {
     SFBlockedBarButtonItem *item  = [SFBlockedBarButtonItem blockedBarButtonItemWithCustomView:({
         SFBlockedButton *button = [SFBlockedButton blockedButtonWithTapHandler:handler];
         [button setImage:image forState:UIControlStateNormal];
@@ -170,8 +148,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     return item;
 }
 
-+ (SFBlockedBarButtonItem *)normalRightBarButtonItemWithTitle:(NSString *)title handler:(void(^)())handler
-{
++ (SFBlockedBarButtonItem *)normalRightBarButtonItemWithTitle:(NSString *)title handler:(void(^)())handler {
     SFBlockedButton *button = [SFBlockedButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0.0, 4.0, 58.0, 30.0);
     button.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f];
@@ -204,13 +181,11 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     return buttonItem;
 }
 
-+ (SFBlockedBarButtonItem *)normalLeftBarButtonItemWithTitle:(NSString *)title handler:(void(^)())handler
-{
++ (SFBlockedBarButtonItem *)normalLeftBarButtonItemWithTitle:(NSString *)title handler:(void(^)())handler {
     return [self normalRightBarButtonItemWithTitle:title handler:handler];
 }
 
-+ (SFBlockedBarButtonItem *)normalLeftBarButtonItemWithImage:(UIImage *)image handler:(void (^)())handler
-{
++ (SFBlockedBarButtonItem *)normalLeftBarButtonItemWithImage:(UIImage *)image handler:(void (^)())handler {
     return [self normalRightBarButtonItemWithImage:image handler:handler];
 }
 
@@ -218,13 +193,11 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 
 @implementation UIViewController (MMDialogs)
 
-- (void)alert:(NSString *)message
-{
+- (void)alert:(NSString *)message {
     [self alert:message completed:nil];
 }
 
-- (void)alert:(NSString *)message completed:(void(^)())completed
-{
+- (void)alert:(NSString *)message completed:(void(^)())completed {
     void(^alertBlock)() = ^{
         [UIAlertView sf_alertWithTitle:NSLocalizedString(@"Prompt", nil) message:message completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
             if (completed) {
@@ -240,8 +213,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     }
 }
 
-- (void)confirm:(NSString *)message approved:(void(^)())approve cancelled:(void(^)())cancel
-{
+- (void)confirm:(NSString *)message approved:(void(^)())approve cancelled:(void(^)())cancel {
     void(^confirmBlock)() = ^{
         [UIAlertView sf_alertWithTitle:NSLocalizedString(@"Prompt", nil) message:message completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
             if (buttonIndex != 0) {
@@ -267,8 +239,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 
 @implementation UIViewController (ErrorHandling)
 
-- (void)processingError:(NSError *)error retry:(void(^)())retry general:(void(^)(NSError *error))general
-{
+- (void)processingError:(NSError *)error retry:(void(^)())retry general:(void(^)(NSError *error))general {
     if (error.code == NSURLErrorTimedOut
         || error.code == SFWrappableServantTimeoutErrorCode
         || [error.localizedDescription hasSuffix:@"timeout."]) {
@@ -299,16 +270,11 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     }
 }
 
-- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                     succeeded:(SFServantSucceeded)succeeded
-{
+- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder succeeded:(SFServantSucceeded)succeeded {
     [self sendServantWithBuilder:servantBuilder succeeded:succeeded identifier:nil];
 }
 
-- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                     succeeded:(SFServantSucceeded)succeeded
-                    identifier:(NSString *)identifier
-{
+- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder succeeded:(SFServantSucceeded)succeeded identifier:(NSString *)identifier {
     __weak typeof(self) wself = self;
     [self sendServantWithBuilder:servantBuilder started:^{
         __strong typeof(wself) self = wself;
@@ -319,20 +285,11 @@ static UIImage *MMLeftBarButtonItemImage = nil;
     } identifier:identifier];
 }
 
-- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                       started:(void(^)())started
-                     succeeded:(SFServantSucceeded)succeeded
-                     completed:(SFServantCompleted)completed
-{
+- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder started:(void(^)())started succeeded:(SFServantSucceeded)succeeded completed:(SFServantCompleted)completed {
     [self sendServantWithBuilder:servantBuilder started:started succeeded:succeeded completed:completed identifier:nil];
 }
 
-- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                       started:(void(^)())started
-                     succeeded:(SFServantSucceeded)succeeded
-                     completed:(SFServantCompleted)completed
-                    identifier:(NSString *)identifier
-{
+- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder started:(void(^)())started succeeded:(SFServantSucceeded)succeeded completed:(SFServantCompleted)completed identifier:(NSString *)identifier {
     [self sendServantWithBuilder:servantBuilder
                          started:started
                        succeeded:succeeded
@@ -341,13 +298,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
                       identifier:identifier];
 }
 
-- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                       started:(void(^)())started
-                     succeeded:(SFServantSucceeded)succeeded
-                  errorHandled:(void(^)())errorHandled
-                     completed:(SFServantCompleted)completed
-                    identifier:(NSString *)identifier
-{
+- (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder started:(void(^)())started succeeded:(SFServantSucceeded)succeeded errorHandled:(void(^)())errorHandled completed:(SFServantCompleted)completed identifier:(NSString *)identifier {
     
     id<SFServant> servant = servantBuilder();
     

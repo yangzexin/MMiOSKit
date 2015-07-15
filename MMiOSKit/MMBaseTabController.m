@@ -28,16 +28,14 @@
 
 @implementation MMBaseTabController
 
-- (void)initialize
-{
+- (void)initialize {
     [super initialize];
     self.switchingByGestureEnabled = YES;
     
     self.compatibleTabController = [SFSwitchTabController new];
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
     
     self.compatibleTabController.scrollable = YES;
@@ -65,8 +63,7 @@
     }];
 }
 
-- (void)_selectViewControllerAnimated:(BOOL)animated next:(BOOL)next completion:(void(^)())completion
-{
+- (void)_selectViewControllerAnimated:(BOOL)animated next:(BOOL)next completion:(void(^)())completion {
     NSInteger nextSelectedIndex = self.selectedIndex + (next ? 1 : -1);
     
     if (nextSelectedIndex < 0) {
@@ -84,23 +81,19 @@
     }];
 }
 
-- (void)selectNextViewControllerAnimated:(BOOL)animated completion:(void(^)())completion
-{
+- (void)selectNextViewControllerAnimated:(BOOL)animated completion:(void(^)())completion {
     [self _selectViewControllerAnimated:animated next:YES completion:completion];
 }
 
-- (void)selectPreviousViewControllerAnimated:(BOOL)animated completion:(void(^)())completion
-{
+- (void)selectPreviousViewControllerAnimated:(BOOL)animated completion:(void(^)())completion {
     [self _selectViewControllerAnimated:animated next:NO completion:completion];
 }
 
-- (CGRect)frameForTabController
-{
+- (CGRect)frameForTabController {
     return self.view.bounds;
 }
 
-- (void)setViewControllers:(NSArray *)viewControllers
-{
+- (void)setViewControllers:(NSArray *)viewControllers {
     _viewControllers = viewControllers;
     
     for (UIViewController *controller in viewControllers) {
@@ -109,29 +102,23 @@
     _compatibleTabController.viewControllers = viewControllers;
 }
 
-- (UIViewController *)selectedViewController
-{
+- (UIViewController *)selectedViewController {
     return [_compatibleTabController selectedViewController];
 }
 
-- (void)setTabBarHidden:(BOOL)hidden animated:(BOOL)animated
-{
+- (void)setTabBarHidden:(BOOL)hidden animated:(BOOL)animated {
 }
 
-- (void)willChangeToSelectedIndex:(NSInteger)selectedIndex
-{
+- (void)willChangeToSelectedIndex:(NSInteger)selectedIndex {
 }
 
-- (void)didChangeToSelectedIndex:(NSInteger)selectedIndex
-{
+- (void)didChangeToSelectedIndex:(NSInteger)selectedIndex {
 }
 
-- (void)willBeginGestureSwitching:(MMBaseTabControllerSwitchingContext *)context
-{
+- (void)willBeginGestureSwitching:(MMBaseTabControllerSwitchingContext *)context {
 }
 
-- (void)switchTabController:(SFSwitchTabController *)switchTabController willSwitchToIndex:(NSInteger)index
-{
+- (void)switchTabController:(SFSwitchTabController *)switchTabController willSwitchToIndex:(NSInteger)index {
     UIViewController *currentViewController = [self.viewControllers objectAtIndex:self.selectedIndex];
     UIViewController *nextViewController = [self.viewControllers objectAtIndex:index];
     BOOL next = index > self.selectedIndex;
@@ -144,8 +131,7 @@
     _selectedIndex = index;
 }
 
-- (void)switchTabController:(SFSwitchTabController *)switchTabController didSwitchToIndex:(NSInteger)index
-{
+- (void)switchTabController:(SFSwitchTabController *)switchTabController didSwitchToIndex:(NSInteger)index {
     [self didChangeToSelectedIndex:index];
 }
 
@@ -153,8 +139,7 @@
 
 @implementation UIViewController (MMBaseTabViewController)
 
-- (MMBaseTabController *)baseTabController
-{
+- (MMBaseTabController *)baseTabController {
     return [[self sf_associatedObjectWithKey:@"baseTabViewController"] sf_weakObject];
 }
 

@@ -19,16 +19,14 @@
 
 @implementation MMNaviBarTabController
 
-- (void)initialize
-{
+- (void)initialize {
     [super initialize];
     self.titleColor = [UIColor sf_colorWithRed:72 green:72 blue:72 alpha:100];
     self.pageIndicatorColor = [UIColor sf_colorWithRed:230 green:230 blue:230];
     self.pageIndicatorColorCurrent = [UIColor sf_colorWithRed:190 green:190 blue:190];
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
 //    self.switchingByGestureEnabled = YES;
     
@@ -75,8 +73,7 @@
     }];
 }
 
-- (void)_rebuildTitleLabels
-{
+- (void)_rebuildTitleLabels {
     [self.titleLabelContainerView sf_removeAllSubviews];
     
     NSMutableArray *titleLabels = [NSMutableArray array];
@@ -99,8 +96,7 @@
     self.titleLabels = titleLabels;
 }
 
-- (void)_updateTitleLabelWithContentOffset:(CGPoint)contentOffset
-{
+- (void)_updateTitleLabelWithContentOffset:(CGPoint)contentOffset {
     CGRect tmpFrame = self.titleLabelContainerView.frame;
     tmpFrame.origin.x = -contentOffset.x / 2;
     self.titleLabelContainerView.frame = tmpFrame;;
@@ -125,19 +121,16 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)updatePageTitles
-{
+- (void)updatePageTitles {
     [self _rebuildTitleLabels];
     [self _updateTitleView];
 }
 
-- (void)_updateTitleView
-{
+- (void)_updateTitleView {
     if (self.viewControllers.count != 1) {
         self.pageIndicator.numberOfPages = self.viewControllers.count;
         self.pageIndicator.hidden = NO;
@@ -148,41 +141,34 @@
     [self _updateTitleLabelWithContentOffset:self.compatibleTabController.scrollView.contentOffset];
 }
 
-- (void)didTapNavigationBar
-{
+- (void)didTapNavigationBar {
 }
 
-- (void)_titleViewTapGestureRecognizer:(UITapGestureRecognizer *)tapGestureRecognizer
-{
+- (void)_titleViewTapGestureRecognizer:(UITapGestureRecognizer *)tapGestureRecognizer {
     if ([self shouldSwitchingTabOnTappingNavigationBar]) {
         [self selectNextViewControllerAnimated:YES completion:nil];
     }
     [self didTapNavigationBar];
 }
 
-- (BOOL)shouldSwitchingTabOnTappingNavigationBar
-{
+- (BOOL)shouldSwitchingTabOnTappingNavigationBar {
     return YES;
 }
 
-- (void)setTitle:(NSString *)title
-{
+- (void)setTitle:(NSString *)title {
     self.navigationItem.titleView = self.titleView;
 }
 
-- (void)didChangeToSelectedIndex:(NSInteger)selectedIndex
-{
+- (void)didChangeToSelectedIndex:(NSInteger)selectedIndex {
     [super didChangeToSelectedIndex:selectedIndex];
     [self _updateTitleView];
 }
 
-- (void)willBeginGestureSwitching:(MMBaseTabControllerSwitchingContext *)context
-{
+- (void)willBeginGestureSwitching:(MMBaseTabControllerSwitchingContext *)context {
     [super willBeginGestureSwitching:context];
 }
 
-- (void)setViewControllers:(NSArray *)viewControllers
-{
+- (void)setViewControllers:(NSArray *)viewControllers {
     [super setViewControllers:viewControllers];
     [self _updateTitleView];
 }

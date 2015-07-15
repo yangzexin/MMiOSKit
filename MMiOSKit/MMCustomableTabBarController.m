@@ -16,8 +16,7 @@
 
 @implementation MMCustomableTabBarController
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
     
     self.barContainerView = [[UIView alloc] initWithFrame:self.tabBar.bounds];
@@ -31,8 +30,7 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tabBar bringSubviewToFront:self.barContainerView];
 }

@@ -24,21 +24,18 @@ NSInteger const MMFirstPageIndex = 1;
 
 @implementation MMTableViewController
 
-- (void)dealloc
-{
+- (void)dealloc {
     self.tableView.showsPullToRefresh = NO;
     self.tableView.delegate = nil;
     self.tableView.dataSource = nil;
 }
 
-- (void)initialize
-{
+- (void)initialize {
     [super initialize];
     self.pageSize = 20;
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:[self tableViewStyle]];
     self.tableView = tableView;
@@ -61,41 +58,34 @@ NSInteger const MMFirstPageIndex = 1;
     }
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self resetPageCursor];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.tableView.scrollsToTop = YES;
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     self.tableView.scrollsToTop = NO;
 }
 
-- (void)resetPageCursor
-{
+- (void)resetPageCursor {
     self.pageIndex = MMFirstPageIndex;
 }
 
-- (void)_dropViewDidBeginRefreshing:(id)refreshControl
-{
+- (void)_dropViewDidBeginRefreshing:(id)refreshControl {
     [self triggerRefreshing];
 }
 
-- (void)refreshPageDidTrigger
-{
+- (void)refreshPageDidTrigger {
     
 }
 
-- (void)triggerRefreshing
-{
+- (void)triggerRefreshing {
     self.pageIndex = MMFirstPageIndex;
     self.refreshing = YES;
     [self restoreLoadingFooter];
@@ -105,23 +95,19 @@ NSInteger const MMFirstPageIndex = 1;
     [self refreshPageDidTrigger];
 }
 
-- (void)endRefreshing
-{
+- (void)endRefreshing {
     self.refreshing = NO;
     [self.refreshControl endRefreshing];
 }
 
-- (void)loadNextPageDidTrigger
-{
+- (void)loadNextPageDidTrigger {
 }
 
-- (BOOL)_isRefreshControlRefreshing
-{
+- (BOOL)_isRefreshControlRefreshing {
     return [self.refreshControl isRefreshing];
 }
 
-- (void)setShouldLoadMore:(BOOL)more
-{
+- (void)setShouldLoadMore:(BOOL)more {
     self.refreshing = NO;
     if ([self _isRefreshControlRefreshing]) {
         [_refreshControl endRefreshing];
@@ -145,13 +131,11 @@ NSInteger const MMFirstPageIndex = 1;
     }
 }
 
-- (BOOL)decideWhetherHasMoreWithNumberOfResults:(NSInteger)numberOfResults
-{
+- (BOOL)decideWhetherHasMoreWithNumberOfResults:(NSInteger)numberOfResults {
     return numberOfResults != 0 && numberOfResults >= self.pageSize;
 }
 
-- (void)pagingWithNumberOfResults:(NSInteger)numberOfResults
-{
+- (void)pagingWithNumberOfResults:(NSInteger)numberOfResults {
     BOOL more = [self decideWhetherHasMoreWithNumberOfResults:numberOfResults];
     
     [self setShouldLoadMore:more];
@@ -160,45 +144,38 @@ NSInteger const MMFirstPageIndex = 1;
     }
 }
 
-- (void)restoreLoadingHeader
-{
+- (void)restoreLoadingHeader {
     self.refreshing = NO;
     if ([self _isRefreshControlRefreshing]) {
         [_refreshControl endRefreshing];
     }
 }
 
-- (void)restoreLoadingFooter
-{
+- (void)restoreLoadingFooter {
     if (!self.pageDisabled) {
         [self.tableView.pullToRefreshView stopAnimating];
     }
     self.loadingNext = NO;
 }
 
-- (UITableViewStyle)tableViewStyle
-{
+- (UITableViewStyle)tableViewStyle {
     return UITableViewStylePlain;
 }
 
-- (UITableViewCellSelectionStyle)defaultCellSelectionStyle
-{
+- (UITableViewCellSelectionStyle)defaultCellSelectionStyle {
     return SFDeviceSystemVersion < 7.0f ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleDefault;
 }
 
-- (BOOL)sf_loadingOrWaitingShowable
-{
+- (BOOL)sf_loadingOrWaitingShowable {
     return !_refreshing && !_loadingNext;
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"DefaultCellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
@@ -211,62 +188,49 @@ NSInteger const MMFirstPageIndex = 1;
     return cell;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 }
 
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
 }
 
 // called on start of dragging (may require some time and or distance to move)
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
 }
 
 // called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
-{
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
 }
 
 // called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
 }
 
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
 }
 
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return nil;
 }
 
-- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
-{
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
-{
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
 }
 
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
-{
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
     return YES;
 }
 
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
 }
 
 @end
