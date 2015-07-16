@@ -18,14 +18,14 @@
     return controller;
 }
 
-static UIImage *MMLeftBarButtonItemImage = nil;
+static UIImage *_MMLeftBarButtonItemImage = nil;
 
 + (UIImage *)defaultLeftBarButtonItemImage {
-    return MMLeftBarButtonItemImage == nil ? [@"✕" sf_imageWithFont:[UIFont systemFontOfSize:30.0f] textColor:[UIColor whiteColor]] : MMLeftBarButtonItemImage;
+    return _MMLeftBarButtonItemImage == nil ? [@"✕" sf_imageWithFont:[UIFont systemFontOfSize:30.0f] textColor:[UIColor whiteColor]] : _MMLeftBarButtonItemImage;
 }
 
-+ (void)setDefaultBarButtonItemImage:(UIImage *)image {
-    MMLeftBarButtonItemImage = image;
++ (void)setDefaultLeftBarButtonItemImage:(UIImage *)image {
+    _MMLeftBarButtonItemImage = image;
 }
 
 - (void)dealloc {
@@ -137,7 +137,7 @@ static UIImage *MMLeftBarButtonItemImage = nil;
 }
 
 #pragma mark - Normal Bar button
-+ (SFBlockedBarButtonItem *)normalRightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handle {
++ (SFBlockedBarButtonItem *)normalRightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handler {
     SFBlockedBarButtonItem *item  = [SFBlockedBarButtonItem blockedBarButtonItemWithCustomView:({
         SFBlockedButton *button = [SFBlockedButton blockedButtonWithTapHandler:handler];
         [button setImage:image forState:UIControlStateNormal];

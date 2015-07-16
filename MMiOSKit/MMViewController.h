@@ -21,7 +21,7 @@
 + (instancetype)controller;
 
 + (UIImage *)defaultLeftBarButtonItemImage;
-+ (void)setDefaultBarButtonItemImage:(UIImage *)image;
++ (void)setDefaultLeftBarButtonItemImage:(UIImage *)image;
 
 - (void)initialize;
 
