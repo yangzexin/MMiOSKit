@@ -42,6 +42,14 @@ static UIImage *_MMLeftBarButtonItemImage = nil;
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    [self initialize];
+    
+    return self;
+}
+
 - (id)init {
     self = [self initWithNibName:nil bundle:nil];
     
