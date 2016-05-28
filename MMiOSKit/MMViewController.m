@@ -73,11 +73,11 @@ static UIImage *_MMLeftBarButtonItemImage = nil;
     }
 }
 
-- (void)waitUntilVisible:(void(^)())block {
+- (void)whenWillVisible:(void(^)())block {
     [_waitingForViewControllerVisible wait:block];
 }
 
-- (void)waitUntilVisible:(void(^)())block identifier:(NSString *)identifier {
+- (void)whenWillVisible:(void(^)())block identifier:(NSString *)identifier {
     [_waitingForViewControllerVisible wait:block uniqueIdentifier:identifier];
 }
 

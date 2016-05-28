@@ -25,8 +25,8 @@
 
 - (void)initialize;
 
-- (void)waitUntilVisible:(void(^)())block;
-- (void)waitUntilVisible:(void(^)())block identifier:(NSString *)identifier;
+- (void)whenWillVisible:(void(^)())block;
+- (void)whenWillVisible:(void(^)())block identifier:(NSString *)identifier;
 
 - (void)setLeftBarButtonItemAsBackButtonWithHandler:(void(^)())handler;
 
