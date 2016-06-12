@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0341FA1D0D67410020A7AC /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0341F91D0D67410020A7AC /* MMNavigationController.m */; };
 		3E5F5D4A1B282E5300088A54 /* MMiOSKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E5F5D491B282E5300088A54 /* MMiOSKit.h */; };
 		3E5F5D4C1B282E5300088A54 /* MMiOSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */; };
 		3E5F5D521B282E5300088A54 /* libMMiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F5D461B282E5300088A54 /* libMMiOSKit.a */; };
@@ -55,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E0341F81D0D67410020A7AC /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
+		3E0341F91D0D67410020A7AC /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
 		3E5F5D461B282E5300088A54 /* libMMiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5F5D491B282E5300088A54 /* MMiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMiOSKit.h; sourceTree = "<group>"; };
 		3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMiOSKit.m; sourceTree = "<group>"; };
@@ -174,19 +177,21 @@
 			isa = PBXGroup;
 			children = (
 				3E5F5D801B282EBC00088A54 /* View */,
-				3E5F5D6A1B282EA400088A54 /* MMViewController.h */,
-				3E5F5D6E1B282EA400088A54 /* MMViewController-private.h */,
-				3E5F5D6B1B282EA400088A54 /* MMViewController.m */,
-				3E5F5D6C1B282EA400088A54 /* MMTableViewController.h */,
-				3E5F5D6D1B282EA400088A54 /* MMTableViewController.m */,
-				3E5F5D6F1B282EA400088A54 /* MMCustomableTabBarController.h */,
-				3E5F5D701B282EA400088A54 /* MMCustomableTabBarController.m */,
-				3E5F5D711B282EA400088A54 /* MMConfigableTableViewController.h */,
-				3E5F5D721B282EA400088A54 /* MMConfigableTableViewController.m */,
 				3E5F5D731B282EA400088A54 /* MMBaseTabController.h */,
 				3E5F5D741B282EA400088A54 /* MMBaseTabController.m */,
+				3E5F5D711B282EA400088A54 /* MMConfigableTableViewController.h */,
+				3E5F5D721B282EA400088A54 /* MMConfigableTableViewController.m */,
+				3E5F5D6F1B282EA400088A54 /* MMCustomableTabBarController.h */,
+				3E5F5D701B282EA400088A54 /* MMCustomableTabBarController.m */,
 				3E5F5D751B282EA400088A54 /* MMNaviBarTabController.h */,
 				3E5F5D761B282EA400088A54 /* MMNaviBarTabController.m */,
+				3E0341F81D0D67410020A7AC /* MMNavigationController.h */,
+				3E0341F91D0D67410020A7AC /* MMNavigationController.m */,
+				3E5F5D6C1B282EA400088A54 /* MMTableViewController.h */,
+				3E5F5D6D1B282EA400088A54 /* MMTableViewController.m */,
+				3E5F5D6E1B282EA400088A54 /* MMViewController-private.h */,
+				3E5F5D6A1B282EA400088A54 /* MMViewController.h */,
+				3E5F5D6B1B282EA400088A54 /* MMViewController.m */,
 				3E5F5D771B282EA400088A54 /* MMWebViewController.h */,
 				3E5F5D781B282EA400088A54 /* MMWebViewController.m */,
 			);
@@ -339,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E5F5D7A1B282EA400088A54 /* MMTableViewController.m in Sources */,
+				3E0341FA1D0D67410020A7AC /* MMNavigationController.m in Sources */,
 				3E5F5D881B282ED000088A54 /* NJKWebViewProgressView.m in Sources */,
 				3E5F5D7E1B282EA400088A54 /* MMNaviBarTabController.m in Sources */,
 				3E5F5D8E1B282ED800088A54 /* UIScrollView+SVInfiniteScrolling.m in Sources */,

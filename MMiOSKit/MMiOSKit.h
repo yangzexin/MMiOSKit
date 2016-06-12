@@ -10,6 +10,7 @@
 #import "MMConfigableTableViewController.h"
 #import "MMCustomableTabBarController.h"
 #import "MMNaviBarTabController.h"
+#import "MMNavigationController.h"
 #import "MMTableViewController.h"
 #import "MMViewController.h"
 #import "MMWebViewController.h"
