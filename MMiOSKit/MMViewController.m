@@ -1,6 +1,6 @@
 //
 //  MMViewController.m
-//  Mormor
+//  MMiOSKit
 //
 //  Created by suruochang on 14-3-18.
 //  Copyright (c) 2014年 SF. All rights reserved.

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "SFIBCompatibleView.h"
+#import <SFFoundation/SFFoundation.h>
+#import <SFiOSKit/SFiOSKit.h>
 
 @class MMTopMostView;
 

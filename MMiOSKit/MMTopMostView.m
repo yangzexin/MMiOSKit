@@ -8,9 +8,6 @@
 
 #import "MMTopMostView.h"
 
-#import "NSObject+SFObjectAssociation.h"
-#import "UIView+SFAddition.h"
-
 @interface MMTopMostView ()
 
 @property (nonatomic, weak) UIView *backgroundView;

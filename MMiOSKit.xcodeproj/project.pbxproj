@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3E0341FA1D0D67410020A7AC /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0341F91D0D67410020A7AC /* MMNavigationController.m */; };
 		3E5F5D4A1B282E5300088A54 /* MMiOSKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E5F5D491B282E5300088A54 /* MMiOSKit.h */; };
-		3E5F5D4C1B282E5300088A54 /* MMiOSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */; };
 		3E5F5D521B282E5300088A54 /* libMMiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5F5D461B282E5300088A54 /* libMMiOSKit.a */; };
 		3E5F5D791B282EA400088A54 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D6B1B282EA400088A54 /* MMViewController.m */; };
 		3E5F5D7A1B282EA400088A54 /* MMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F5D6D1B282EA400088A54 /* MMTableViewController.m */; };
@@ -60,7 +59,6 @@
 		3E0341F91D0D67410020A7AC /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
 		3E5F5D461B282E5300088A54 /* libMMiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5F5D491B282E5300088A54 /* MMiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMiOSKit.h; sourceTree = "<group>"; };
-		3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMiOSKit.m; sourceTree = "<group>"; };
 		3E5F5D511B282E5300088A54 /* MMiOSKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMiOSKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5F5D571B282E5300088A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E5F5D621B282E7F00088A54 /* SFiOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFiOSKit.xcodeproj; path = ../SFLibraries/SFiOSKit/SFiOSKit.xcodeproj; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				3EA029AC1B2D278400324D11 /* View */,
 				3E5F5D691B282E9B00088A54 /* ViewControllers */,
 				3E5F5D491B282E5300088A54 /* MMiOSKit.h */,
-				3E5F5D4B1B282E5300088A54 /* MMiOSKit.m */,
 			);
 			path = MMiOSKit;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 				3E5F5D7B1B282EA400088A54 /* MMCustomableTabBarController.m in Sources */,
 				3E5F5D7C1B282EA400088A54 /* MMConfigableTableViewController.m in Sources */,
 				3E5F5D8F1B282ED800088A54 /* UIScrollView+SVPullToRefresh.m in Sources */,
-				3E5F5D4C1B282E5300088A54 /* MMiOSKit.m in Sources */,
 				3E5F5D871B282ED000088A54 /* NJKWebViewProgress.m in Sources */,
 				3E5F5D7F1B282EA400088A54 /* MMWebViewController.m in Sources */,
 			);
@@ -413,6 +409,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../SFLibraries/SFFoundation,
+					../SFLIbraries/SFiOSKit,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -449,6 +450,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../SFLibraries/SFFoundation,
+					../SFLIbraries/SFiOSKit,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -463,7 +469,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../SFLibraries/**",
+					../SFLibraries/SFFoundation/SFFoundation,
+					../SFLIbraries/SFiOSKit/SFiOSKit,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
@@ -479,7 +486,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../SFLibraries/**",
+					../SFLibraries/SFFoundation/SFFoundation,
+					../SFLIbraries/SFiOSKit/SFiOSKit,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";

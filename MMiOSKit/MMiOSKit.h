@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 yangzexin. All rights reserved.
 //
 
-#import "MMBaseTabController.h"
-#import "MMConfigableTableViewController.h"
-#import "MMCustomableTabBarController.h"
-#import "MMNaviBarTabController.h"
-#import "MMNavigationController.h"
-#import "MMTableViewController.h"
-#import "MMViewController.h"
-#import "MMWebViewController.h"
+#import <MMiOSKit/MMBaseTabController.h>
+#import <MMiOSKit/MMConfigableTableViewController.h>
+#import <MMiOSKit/MMCustomableTabBarController.h>
+#import <MMiOSKit/MMNaviBarTabController.h>
+#import <MMiOSKit/MMNavigationController.h>
+#import <MMiOSKit/MMTableViewController.h>
+#import <MMiOSKit/MMViewController.h>
+#import <MMiOSKit/MMWebViewController.h>
 
-#import "MMTopMostView.h"
+#import <MMiOSKit/MMTopMostView.h>

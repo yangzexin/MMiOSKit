@@ -1,6 +1,6 @@
 //
 //  MMConfigableTableViewController.m
-//  Mormor
+//  MMiOSKit
 //
 //  Created by yangzexin on 8/28/14.
 //  Copyright (c) 2014 yangzexin. All rights reserved.

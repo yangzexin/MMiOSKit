@@ -1,5 +1,5 @@
 //
-//  SFNaviBarTabController.m
+//  MMNaviBarTabController.m
 //  Mormor
 //
 //  Created by yangzexin on 5/5/14.
