@@ -105,7 +105,7 @@
     [self sf_setLoadingOrWaitingShowable:NO];
     
     __weak typeof(self) weakself = self;
-    SFBlockedButton *closeButton = [SFBlockedButton blockedButtonWithTapHandler:^{
+    SFBlockedButton *closeButton = [SFBlockedButton blockedButtonWithTap:^{
         __strong typeof(weakself) self = weakself;
         [self.navigationController popViewControllerAnimated:YES];
     }];

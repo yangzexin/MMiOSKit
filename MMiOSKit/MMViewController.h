@@ -28,47 +28,47 @@
 - (void)whenWillVisible:(void(^)())block;
 - (void)whenWillVisible:(void(^)())block identifier:(NSString *)identifier;
 
-- (void)setLeftBarButtonItemAsBackButtonWithHandler:(void(^)())handler;
+- (void)setLeftBarButtonItemAsBackButtonWithTap:(void(^)())tap;
 
-- (SFBlockedBarButtonItem *)rightBarButtonItemWithImage:(UIImage *)image handler:(void(^)())handler;
-- (SFBlockedBarButtonItem *)rightBarButtonItemWithTitle:(NSString *)title handler:(void(^)())handler;
+- (SFBlockedBarButtonItem *)rightBarButtonItemWithImage:(UIImage *)image tap:(void(^)())tap;
+- (SFBlockedBarButtonItem *)rightBarButtonItemWithTitle:(NSString *)title tap:(void(^)())tap;
 
 @end
 
 @interface UIViewController (MMDialogs)
 
 - (void)alert:(NSString *)message;
-- (void)alert:(NSString *)message completed:(void(^)())completed;
+- (void)alert:(NSString *)message close:(void(^)())close;
 
-- (void)confirm:(NSString *)message approved:(void(^)())approve cancelled:(void(^)())cancel;
+- (void)confirm:(NSString *)message approve:(void(^)())approve cancel:(void(^)())cancel;
 
 @end
 
 @interface UIViewController (ServantSupport)
 
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                     succeeded:(SFServantSucceeded)succeeded;
+                       success:(SFServantSuccess)success;
 
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                     succeeded:(SFServantSucceeded)succeeded
+                       success:(SFServantSuccess)success
                     identifier:(NSString *)identifier;
 
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                       started:(void(^)())started
-                     succeeded:(SFServantSucceeded)succeeded
-                     completed:(SFServantCompleted)completed;
+                         start:(void(^)())start
+                       success:(SFServantSuccess)success
+                        finish:(SFServantFinish)finish;
 
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                       started:(void(^)())started
-                     succeeded:(SFServantSucceeded)succeeded
-                     completed:(SFServantCompleted)completed
+                         start:(void(^)())start
+                       success:(SFServantSuccess)success
+                        finish:(SFServantFinish)finish
                     identifier:(NSString *)identifier;
 
 - (void)sendServantWithBuilder:(id<SFServant>(^)())servantBuilder
-                       started:(void(^)())started
-                     succeeded:(SFServantSucceeded)succeeded
+                         start:(void(^)())start
+                       success:(SFServantSuccess)success
                   errorHandled:(void(^)())errorHandled
-                     completed:(SFServantCompleted)completed
+                        finish:(SFServantFinish)finish
                     identifier:(NSString *)identifier;
 
 @end
