@@ -29,7 +29,7 @@
 }
 
 - (id)initFromLastWindow {
-    self = [self initWithContainerView:[[[UIApplication sharedApplication] windows] lastObject]];
+    self = [self initWithContainerView:[[[UIApplication sharedApplication] windows] firstObject]];
     
     return self;
 }
